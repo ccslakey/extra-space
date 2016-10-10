@@ -21,6 +21,7 @@ gem 'devise'
 gem 'rails-assets-tether', '>= 1.1.0'
 gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk', '~> 2.3'
+gem 'pry'
 
 gem 'coffee-rails'
 group :development, :test do
