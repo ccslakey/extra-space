@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @upload.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @upload.description %>
+</p>
+
+<p>
+  <strong>Original Name:</strong>
+  <%= @upload.file_file_name %>
+</p>
+
+<p>
+  <strong>File Type:</strong>
+  <%= @upload.file_content_type %>
+</p>
+
+<p>
+  <strong>File Type:</strong>
+  <%= number_to_human_size(@upload.file_file_size) %>
+</p>
+
+<%= link_to 'Edit', edit_upload_path(@upload) %> |
+<%= link_to 'Back', uploads_path %>
