@@ -1,10 +1,10 @@
-
+<div class="pull-right">
+  <%= link_to 'Show', @upload %> |
+  <%= link_to 'Back', uploads_path %>
+</div>
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
     <h1>Editing Upload</h1>
     <%= render 'form', upload: @upload %>
   </div>
 </div>
-
-<%= link_to 'Show', @upload %> |
-<%= link_to 'Back', uploads_path %>
