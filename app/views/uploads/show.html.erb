@@ -24,5 +24,21 @@
   <%= number_to_human_size(@upload.file_file_size) %>
 </p>
 
+<% if @upload.is_pdf? %>
+  <embed src="<%= @upload.file.url %>" width="600px" height="600px" />
+<% end %>
+<% if @upload.is_image? %>
+  <%= image_tag @upload.file.url  %>
+<% end %>
+<% if @upload.is_vid? %>
+  <%= video_tag @upload.file.url, controls: true, autobuffer: true  %>
+<% end %>
+<% if @upload.is_doc? %>
+  <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+  </button>
+<% end %>
+
+
 <%= link_to 'Edit', edit_upload_path(@upload) %> |
 <%= link_to 'Back', uploads_path %>

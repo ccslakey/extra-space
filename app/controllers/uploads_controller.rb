@@ -10,6 +10,7 @@ class UploadsController < ApplicationController
   # GET /uploads/1
   # GET /uploads/1.json
   def show
+    # binding.pry
   end
 
   # GET /uploads/new
@@ -24,8 +25,9 @@ class UploadsController < ApplicationController
   # POST /uploads
   # POST /uploads.json
   def create
+    binding.pry
     @upload = Upload.new(upload_params)
-
+    binding.pry
     respond_to do |format|
       if @upload.save
         flash[:success] = 'Upload was successfully created.'
@@ -42,8 +44,12 @@ class UploadsController < ApplicationController
   # PATCH/PUT /uploads/1
   # PATCH/PUT /uploads/1.json
   def update
+    binding.pry
     respond_to do |format|
+      binding.pry
       if @upload.update(upload_params)
+        binding.pry
+        binding.pry
         flash[:success] = 'Upload was successfully updated.'
         format.html { redirect_to @upload }
         format.json { render :show, status: :ok, location: @upload }
