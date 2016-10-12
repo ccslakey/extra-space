@@ -23,6 +23,8 @@ gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk', '~> 2.3'
 gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem 'pry'
+gem 'remotipart', '~> 1.2'
+# ^ for ajax file uploads
 
 gem 'coffee-rails'
 group :development, :test do
