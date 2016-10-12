@@ -24,4 +24,13 @@ class Upload < ApplicationRecord
     ["image/jpeg", "image/gif", "image/png", "video/mp4" ].include? file_content_type
   end
 
+  def self.search(search)
+    if search
+      # search in original file name, title, desc, or content_type
+      where('LOWER(file_file_name) LIKE :search OR LOWER(description) LIKE :search OR LOWER(title) LIKE :search OR LOWER(file_content_type) LIKE :search', search: "%#{search.downcase}%")
+    else
+      all
+    end
+  end
+
 end
