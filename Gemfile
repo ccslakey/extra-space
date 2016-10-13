@@ -25,7 +25,7 @@ gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem 'pry'
 gem 'remotipart', '~> 1.2'
 # ^ for ajax file uploads
-gem 'jquery-fileupload-rails', github: 'Springest/jquery-fileupload-rails'
+gem 'jquery-fileupload-rails'#, github: 'Springest/jquery-fileupload-rails'
 # ^ dropzone/multiple upload
 gem 'coffee-rails'
 group :development, :test do
