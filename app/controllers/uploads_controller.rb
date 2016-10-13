@@ -48,6 +48,7 @@ class UploadsController < ApplicationController
         flash[:success] = 'Upload was successfully updated.'
         format.html { redirect_to @upload }
         format.json { render :show, status: :ok, location: @upload }
+        format.js { redirect_to @upload }
       else
         flash[:error] = 'Upload was successfully destroyed.'
         format.html { render :edit }

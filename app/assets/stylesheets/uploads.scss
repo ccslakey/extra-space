@@ -7,3 +7,18 @@
   position: relative;
   left: calc(50% - 400px);
 }
+.uploads{
+  .upload{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    .img-responsive{
+      width: 50%;
+    }
+    .file-placeholder{
+      font-size: 10vw;
+    }
+    .text-small{
+      font-size: 10px;
+    }
+  }
+}

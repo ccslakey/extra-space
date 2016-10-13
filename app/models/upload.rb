@@ -1,8 +1,11 @@
 class Upload < ApplicationRecord
   has_attached_file :file
+  serialize :file, Array
   validates_attachment :file, presence: true,
                               content_type: { content_type: ["image/jpeg", "image/gif", "image/png", "application/pdf", "video/mp4", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"] },
                               size: { in: 0..1000000.megabytes }
+
+
 
   def is_pdf?
     file_content_type == "application/pdf"
