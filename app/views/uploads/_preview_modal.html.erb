@@ -1,0 +1,35 @@
+
+<!-- Modal -->
+<div class="modal fade" id="myModal<%=i%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel<%=i%>">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel<%=i%>">Preview <%= link_to upload.file_file_name.truncate(30), upload %></h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-sm-6">
+                  <% if upload.is_pdf? %>
+                    <embed class="upload-document preview" src="<%= upload.file.url %>"/>
+                  <% end %>
+                  <% if upload.is_image? %>
+                    <%= image_tag upload.file.url, class: "img-responsive col-sm-offset-6" %>
+                  <% end %>
+                  <% if upload.is_vid? %>
+                    <%= video_tag upload.file.url, controls: true, autobuffer: true, class: "upload-document video-preview" %>
+                  <% end %>
+                  <% if upload.is_doc? %>
+                    <iframe class="upload-document video-preview" src="https://view.officeapps.live.com/op/embed.aspx?src=<%= upload.file.url %> frameborder='0'/>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

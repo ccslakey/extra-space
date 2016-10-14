@@ -11,8 +11,9 @@
   .upload{
     padding-top: 5px;
     padding-bottom: 5px;
-    .img-responsive{
-      width: 50%;
+    img{
+      max-width: 128px !important;
+      max-height: 128px !important;
     }
     .file-placeholder{
       font-size: 10vw;
@@ -25,4 +26,16 @@
 
 .progress-wrapper {
   display: none;
+
+}
+
+.preview{
+  width: 600px;
+  left: calc(50% - 150px);
+}
+
+.video-preview{
+  width: 598px;
+  left: calc(50% - 150px);
+  height: auto;
 }

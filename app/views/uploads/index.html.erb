@@ -2,24 +2,43 @@
 
 <h1>Uploads</h1>
 <br>
-<div class="row uploads">
-    <% @uploads.each do |upload| %>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-          <div class="upload">
-              <% if upload.is_image? %>
-              <a href="<%= upload_path(upload) %>" style="cursor:pointer"><%= image_tag upload.file.url, class: "img-thumbnail" %></a>
-          <% else %>
-              <a href="<%= upload_path(upload) %>" style="cursor:pointer"><span class="glyphicon glyphicon-file file-placeholder"></span></a>
-              <% end %>
-              <!-- <div><%= link_to upload.title, upload %></div> -->
-              <div class="text-muted text-small">
-                  <%= upload.file_content_type.split(".").last %>
-                  <big>|</big>
-                  <%= number_to_human_size upload.file_file_size %>
-              </div>
 
-              <div><%= upload.file_file_name.truncate(30) %></div>
-          </div>
-      </div>
+<div class="row uploads">
+
+    <% @uploads.each_with_index do |upload, i| %>
+
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="upload">
+            <% if upload.is_image? %>
+              <a data-toggle="modal" data-target="#myModal<%=i%>" style="cursor:pointer;">
+                <%= image_tag upload.file.url, class: "img-responsive" %>
+              </a>
+
+            <% else %>
+              <a data-toggle="modal" data-target="#myModal<%=i%>" style="cursor:pointer;">
+                  <span class="glyphicon glyphicon-file file-placeholder"></span>
+              </a>
+            <% end %>
+
+            <!-- <div><%= link_to upload.title, upload %></div> -->
+            <div class="text-muted text-small">
+                <%= upload.file_content_type.split(".").last %>
+                <big>|</big>
+                <%= number_to_human_size upload.file_file_size %>
+            </div>
+
+            <div><%= link_to upload.file_file_name.truncate(30), upload %></div>
+        </div>
+    </div>
+    <%= render 'preview_modal', upload: upload, i: i %>
     <% end %>
 </div>
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
