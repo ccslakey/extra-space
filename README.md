@@ -1,24 +1,9 @@
-# README
+# Extra Space App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Rails App I made to test some concepts and technologies I recently started using at work.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Software Used
+Bootstrap-Sass for css
+Paperclip/AWS used to upload and store file attachments to S3
+Remotipart - non-complicated AJAX file uploads. Handles targeting an iframe for you
+Turbolinks for navigation
